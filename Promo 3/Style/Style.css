@@ -1,0 +1,453 @@
+/* Base Start */
+@font-face {
+    font-family: 'Changa';
+    src: url('../Fonts/Ar/Changa-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../Fonts/Eng/Inter-VariableFont_opsz\,wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --background: #201A18;
+    --background-Secondry: #EDE0DB;
+    --background-low: #2b2422;
+    --secondry-dark: #c5c1bf;
+    --primary-dark: #FFB690;
+    --on-primary-dark: #552100;
+    --highest-dark: #3A3330;
+    --primary-text: #EDE0DB;
+    --secondry-text: #a3a3a3;
+    --primary-container-dark: #783200;
+    --secondary-container-dark: #5C4032;
+    --on-secondary-container-dark: #FFDBCA;
+}
+
+/* Base End */
+/* Reused Code Start */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Changa", sans-serif;
+    font-weight: 700;
+    background: var(--background);
+    scrollbar-width: thin;
+    scrollbar-color: var(--secondry-dark) var(--background);
+    scroll-behavior: smooth;
+}
+
+body {
+    position: relative;
+}
+
+.TitleText {
+    color: var(--primary-text);
+    background-color: inherit;
+}
+
+.SecondryText {
+    color: var(--secondry-text);
+    background-color: inherit;
+}
+
+a {
+    color: var(--primary-text);
+    transition: color 0.3s ease;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--primary-dark);
+}
+
+.Btn {
+    display: inline-block;
+    position: relative;
+    width: 114px;
+    font-weight: bold;
+    padding: 5px;
+    text-decoration: none;
+    text-align: center;
+    border: none;
+    border-radius: 1.5rem;
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 1;
+    transition: color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.Btn::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0%;
+    z-index: -1;
+    transition: height 0.4s ease;
+    border-radius: inherit;
+}
+
+.Btn:hover::before {
+    height: 100%;
+}
+
+.PrimaryBtn {
+    font-size: 14px;
+    background-color: var(--primary-dark);
+    color: var(--background);
+    box-shadow: 0 5px var(--background-Secondry);
+}
+
+.PrimaryBtn::before {
+    background-color: var(--background-Secondry);
+}
+
+.SecondryBtn {
+    font-size: 14px;
+    background-color: var(--background-Secondry);
+    color: var(--background);
+    box-shadow: 0 5px var(--secondry-dark);
+}
+
+.SecondryBtn::before {
+    background-color: var(--secondry-dark);
+}
+
+.TextBox {
+    border: 1px solid var(--background-Secondry);
+    border-radius: 5px;
+    color: var(--primary-text);
+    font-weight: bold;
+    direction: rtl;
+    padding: 5px;
+    width: 100%;
+    height: 43px;
+    transition: border 0.3s ease;
+    outline: none;
+}
+
+.TextBox:focus {
+    border: 1px solid var(--primary-dark);
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+    margin-top: 2rem;
+    border: 1px solid var(--secondry-dark);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-family: "Inter", sans-serif;
+}
+
+.footer .CopyRights {
+    color: var(--secondry-text)
+}
+
+.footer .Links {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* Reused Code End */
+
+/* Landing Start */
+
+.LandingNavBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 30px 5rem;
+    border: 0.2px solid var(--secondry-dark);
+    border-radius: 15px;
+}
+
+.LandingNavBar .logo {
+    margin-right: 15px;
+    color: var(--primary-text);
+}
+
+.LandingNavBar .links button {
+    margin-left: 10px;
+}
+
+.LandingMain {
+    display: flex;
+    align-items: center;
+    height: 20rem;
+}
+
+.LandingMain .Content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    margin-right: 10rem;
+    gap: 15px;
+}
+
+.LandingMain h1 {
+    font-size: 40px;
+}
+
+.LandingMain h4 {
+    text-align: right;
+}
+
+.LandingMain .Start {
+    width: 9rem;
+    height: 2.4rem;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Landing End */
+/* Accounts Start */
+
+.Container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.PassAccountArea {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 22rem;
+    position: absolute;
+    justify-content: flex-start;
+    border-radius: 10px;
+    border: 1px solid var(--background-Secondry);
+    margin-top: 50%;
+}
+
+.PassAccountArea .ContinuWithGoogle {
+    margin-top: 45px;
+    font-size: 15px;
+    width: 90%;
+    height: 35px;
+    color: var(--primary-text);
+    border-color: var(--background-Secondry);
+    border-radius: 5px;
+    transition: color 0.4s ease, background-color 0.3s ease;
+}
+
+.PassAccountArea .ContinuWithGoogle:hover {
+    background-color: var(--background-Secondry);
+    color: var(--background);
+}
+
+.PassAccountArea .Seperator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 90%;
+}
+
+.PassAccountArea .Seperator hr {
+    border: none;
+    border-top: 1px solid var(--secondry-text);
+    width: 100%;
+}
+
+.PassAccountArea .Seperator p {
+    color: var(--secondry-text);
+    position: absolute;
+}
+
+.PassAccountArea .UserData {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 90%;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.PassAccountArea .UserData .ForgetPassword {
+    font-size: 12px;
+    font-weight: bold;
+    position: absolute;
+    top: 100%;
+    right: 1%;
+}
+
+.PassAccountArea .PassBtn {
+    position: absolute;
+    bottom: 10%;
+    width: 90%;
+}
+
+.PassAccountArea .NoteText {
+    color: var(--secondry-text);
+    position: absolute;
+    bottom: 3%;
+    font-size: 11px;
+    text-align: center;
+    width: 80%;
+}
+
+/* Accounts End */
+/* Main Start */
+
+.MainGrid{
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    height: 100%;
+}
+
+.MainContent {
+    flex: 1;
+    height: 112vh;
+    margin-right: 20%;
+}
+
+.ProductsContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.NavBar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 5px 0 0 5px;
+    background-color: var(--background-low);
+}
+
+.NavBar .NavBarLinks {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    padding: 10px;
+    gap: 10px;
+    margin-top: 3rem;
+}
+
+.NavBar .NavBarLinks .NavBtn {
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: var(--primary-text);
+    background-color: inherit;
+    text-align: right;
+    padding: 5px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.NavBar .NavBarLinks .NavBtn:hover {
+    border-color: var(--primary-text);
+}
+
+.NavBar .NavBarLinks .NavBtn.active {
+    background-color: var(--primary-dark);
+    color: var(--background);
+    border-color: transparent;
+}
+
+.SectionHeader {
+    margin-right: 15px;
+}
+
+.SectionSecondry {
+    margin-right: 15px;
+}
+
+.Filters{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 10px;
+    padding: 10px;
+    height: 4rem;
+}
+
+.Filters .FilterBtn{
+    color: var(--primary-text);
+    padding: 8px;
+    border: 1px solid var(--primary-text);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.Filters .FilterBtn:hover{
+    background-color: var(--primary-text);
+    color: var(--background);
+    border-color: transparent;
+}
+
+.FilterBtn.active{
+    background-color: var(--primary-dark);
+    color: var(--background);
+    border-color: transparent;
+}
+
+.Products{
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    direction: rtl;
+    border-radius: 10px;
+    padding: 10px;
+    gap: 16px;
+    height: 100%;
+    padding-right: 2rem;
+}
+
+.Product{
+    width: 260px;
+    min-height: 250px;
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid var(--primary-text);
+}
+
+.ProductName{
+    color: var(--primary-text);
+    font-size: 22px;
+}
+
+.ProductShortDec{
+     color: var(--secondry-text);
+     font-size: 14px;
+}
+
+/* Main End */
